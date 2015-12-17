@@ -5,8 +5,6 @@ Project("{7482137E-98B2-E4BD-2B0B-7222303CE115}") = "Project-4-Merge", "Assembly
 EndProject
 Project("{7482137E-98B2-E4BD-2B0B-7222303CE115}") = "Project-4-Merge", "Assembly-CSharp.csproj", "{4CF44D59-F9A3-8D8A-1560-9E1C9C3DAA1F}"
 EndProject
-Project("{7482137E-98B2-E4BD-2B0B-7222303CE115}") = "Project-4-Merge", "Assembly-CSharp-Editor.csproj", "{55CB3337-0D81-C8E4-C308-6C450141CF88}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,10 +19,6 @@ Global
 		{4CF44D59-F9A3-8D8A-1560-9E1C9C3DAA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF44D59-F9A3-8D8A-1560-9E1C9C3DAA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CF44D59-F9A3-8D8A-1560-9E1C9C3DAA1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55CB3337-0D81-C8E4-C308-6C450141CF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55CB3337-0D81-C8E4-C308-6C450141CF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55CB3337-0D81-C8E4-C308-6C450141CF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55CB3337-0D81-C8E4-C308-6C450141CF88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

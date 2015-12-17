@@ -1,11 +1,25 @@
-﻿
-var MaxHealth : int = 150;
-var Health : int;
+﻿var MaxHealth : float = 150;
+var Health : float;
+var healthBar : UnityEngine.UI.Image;
+var healthText : UnityEngine.UI.Text;
+
 static var enemiesKilled : int = 0;
 
 function Start() {
     Health = MaxHealth;
     enemiesKilled = 0;
+}
+
+function Update() {
+	// health bar
+	healthBar.fillAmount = (Health/MaxHealth);
+	healthText.text = "Health: " + Health;
+	if(Health >= MaxHealth/2.0f){
+		healthBar.color = new Color32(0,255,0,255);
+	}
+	else{
+		healthBar.color = new Color32(255,0,0,255);
+	}
 }
 
 function ApplyDamage(TheDamage : int) {
@@ -25,3 +39,4 @@ function Dead() {
 function RespawnStats(){
     Health = MaxHealth;
 }
+
