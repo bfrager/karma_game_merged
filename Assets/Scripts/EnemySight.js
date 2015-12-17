@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 public var fieldOfViewAngle : float = 110f;             // Number of degrees, centred on forward, for the enemy see.
 public var playerInSight : boolean;                     // Whether or not the player is currently sighted.
@@ -20,7 +20,7 @@ function Start ()
 {
     // Setting up the references. UPDATE
     nav = GetComponent(NavMeshAgent);
-    col = GetComponent(SphereCollider);
+    col = GetComponentInChildren(SphereCollider); 
     anim = GetComponent(Animator);
     lastPlayerSighting = GameObject.FindGameObjectWithTag("GameController").GetComponent(LastPlayerSighting);
     player = GameObject.FindGameObjectWithTag("Player");

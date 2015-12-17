@@ -1,9 +1,11 @@
-﻿#pragma strict
+#pragma strict
 var MaxHealth : int = 100;
 var Health : int;
 
+
 function Start() {
     Health = MaxHealth;
+
 }
 
 function ApplyDamage(M4A1Damage : int) {
@@ -20,12 +22,14 @@ function ApplyDamage(M4A1Damage : int) {
         } 
     }
 
-function Dead() {
-    Destroy (gameObject);
-    PlayerStats.enemiesKilled ++;
-    Debug.Log(PlayerStats.enemiesKilled);
-}
+        function Dead() {
+       
+            Destroy (gameObject);
+            PlayerStats.enemiesKilled ++;
+            Debug.Log(PlayerStats.enemiesKilled);
+    
+        }
 
-function RespawnStats(){
-    Health = MaxHealth;
-}
+        function RespawnStats(){
+            Health = MaxHealth;
+        }

@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var TheDamage : int = 35;
+var M4A1Damage : int = 35;
 // var AK47Damage : int = 25;
 var Distance : float;
 var M4A1Range : float = 50; 
@@ -31,8 +31,7 @@ function Update() {
                     Distance = hit.distance;
                     if (Distance < M4A1Range) {
                         if (Bullets > 0) {
-                            hit.transform.SendMessage("ApplyDamage", TheDamage, SendMessageOptions.DontRequireReceiver);
-                            Debug.Log("Attack Enemy!!!!SHOOOTT!");
+                            hit.transform.SendMessage("ApplyDamage", M4A1Damage, SendMessageOptions.DontRequireReceiver);
                         } else {
                             Debug.Log("No more bullets;");
                         }

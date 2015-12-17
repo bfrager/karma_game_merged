@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="karma_game_merged.CSharp.Plugins.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\fpsSystem.js">
+    <Files>
+      <File FileName="Assets\Scripts\fpsSystem.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyLogic1.js" Line="9" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

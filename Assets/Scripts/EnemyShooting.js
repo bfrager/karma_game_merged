@@ -1,5 +1,6 @@
-﻿#pragma strict
+#pragma strict
 
+public var damage : float = 25f;
 public var maximumDamage : float = 120f;                    // The maximum potential damage per shot.
 public var minimumDamage : float = 45f;                 // The minimum potential damage per shot.
 public var shotClip : AudioClip;                            // An audio clip to play when a shot happens.
@@ -24,7 +25,7 @@ function Start ()
     anim = GetComponent(Animator);
     laserShotLine = GetComponentInChildren(LineRenderer);
     laserShotLight = GetComponentInChildren(Light);
-    col = GetComponent(SphereCollider);
+    col = GetComponentInChildren(SphereCollider);
     player = GameObject.FindGameObjectWithTag("Player").transform;
     playerHealth = player.gameObject.GetComponent(PlayerStats);
     hash = GameObject.FindGameObjectWithTag("GameController").GetComponent(HashIDs);
@@ -78,16 +79,19 @@ function Shoot ()
 {
     // The enemy is shooting.
     shooting = true;
-//    
-//    // The fractional distance from the player, 1 is next to the player, 0 is the player is at the extent of the sphere collider.
-//    var fractionalDistance : float = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
-//
-//    // The damage is the scaled damage, scaled by the fractional distance, plus the minimum damage.
-//    var damage : float = scaledDamage * fractionalDistance + minimumDamage;
+    
+    // // The fractional distance from the player, 1 is next to the player, 0 is the player is at the extent of the sphere collider.
+    // var fractionalDistance : float = (col.radius - Vector3.Distance(transform.position, player.position)) / col.radius;
 
-	var damage : float = 50;
+    // // The damage is the scaled damage, scaled by the fractional distance, plus the minimum damage.
+    // var damage : float = scaledDamage * fractionalDistance + minimumDamage;
+
+
+//ADD IF STATEMENT TRACKING LASER PATH TO PLAYER COLLIDER
     // The player takes damage.
     playerHealth.ApplyDamage(damage);
+    
+    Debug.Log("Player hit for " + damage + " damage . Player Health = " + playerHealth.Health);
     
     // Display the shot effects.
     ShotEffects();

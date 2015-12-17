@@ -40,10 +40,12 @@ function Update() {
     if (Input.GetKeyDown(KeyCode.Alpha1)) {
         currentWeapon = 0;
         SelectWeapon(currentWeapon);
+        Debug.Log(currentWeapon);
     }
     if (Input.GetKeyDown(KeyCode.Alpha2)) {
         currentWeapon = 1;
         SelectWeapon(currentWeapon);
+        Debug.Log(currentWeapon);
     }
     if (Input.GetKeyDown(KeyCode.Alpha3)) {
         currentWeapon = 2;
