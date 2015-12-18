@@ -76,22 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Fantasy Skybox FREE\Scripts\FSPlayer.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\SetAudioLevels.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
-    <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
     <Compile Include="Assets\Scripts\HealthBar2.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Boxing_01_Free_v2\Boxing_Free_Unity_Info.txt" />
     <None Include="Assets\Fantasy Skybox FREE\Readme\Readme.txt" />
-    <None Include="Assets\Game Jam Menu Template\Fonts\OpenSans\License!.txt" />
-    <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
