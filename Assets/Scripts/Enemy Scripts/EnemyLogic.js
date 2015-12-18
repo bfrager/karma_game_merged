@@ -25,6 +25,7 @@ function ApplyDamage(M4A1Damage : int) {
         function Dead() {
        
             Destroy (gameObject);
+           
     
         }
 

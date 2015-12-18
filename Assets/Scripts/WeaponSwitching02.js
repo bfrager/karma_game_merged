@@ -1,40 +1,32 @@
 ﻿
 
-static var currentWeapon = 0;
-var maxWeapons = 2;
+static var currentWeapon = 1;
+var maxWeapons = 4;
 var theAnimator : Animator;
 var M4A1 : GameObject;
 var AK47 : GameObject;
 var Grenade : GameObject;
 
 function Awake() {
-
+    SelectWeapon(currentWeapon);
 }
 
 function Update() {
     if (Input.GetAxis("Mouse ScrollWheel") > 0) {
-        if (currentWeapon +1 <= maxWeapons) {
-
-            currentWeapon ++;
-        } else {
+        currentWeapon ++;
+        if (currentWeapon == maxWeapons) {
             currentWeapon = 0;
         }
         SelectWeapon(currentWeapon);
+        Debug.Log(currentWeapon);
     }
     else if (Input.GetAxis("Mouse ScrollWheel") < 0) {
-        if (currentWeapon -1 >= 0) {
-            currentWeapon --;
-        }   
-        else {
+        currentWeapon --;
+        if (currentWeapon == -1) {
             currentWeapon = maxWeapons;
         }
         SelectWeapon(currentWeapon);
-    }
-    if (currentWeapon == maxWeapons +1) {
-        currentWeapon = 0;
-    }
-    if (currentWeapon == -1) {
-        currentWeapon = maxWeapons;
+        Debug.Log(currentWeapon);
     }
 
     if (Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -50,8 +42,13 @@ function Update() {
     if (Input.GetKeyDown(KeyCode.Alpha3)) {
         currentWeapon = 2;
         SelectWeapon(currentWeapon);
+        Debug.Log(currentWeapon);
     }
-
+    if (Input.GetKeyDown(KeyCode.Alpha4)) {
+        currentWeapon = 3;
+        SelectWeapon(currentWeapon);
+        Debug.Log(currentWeapon);
+    }
 }
 
 function SelectWeapon (index : int) {

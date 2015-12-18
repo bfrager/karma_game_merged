@@ -25,7 +25,6 @@ function pickup() {
             GetComponent.<Rigidbody>().useGravity = false;
             GetComponent.<Rigidbody>().isKinematic = true;
             this.transform.position = onhand.position;
-            
             this.transform.parent = GameObject.Find("FirstPersonCharacter").transform;
         }
    

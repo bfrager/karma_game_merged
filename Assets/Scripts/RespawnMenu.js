@@ -1,4 +1,7 @@
+﻿import UnityEngine.UI;
+
 #pragma strict
+
 
 /*
 var lookAround01 : MouseLook;
@@ -27,14 +30,21 @@ function Update () {
 }*/
 
 
+
 var charMotor : CharacterController;
 var mono : MonoBehaviour;  // store as a monobebavior
 static var playerDead = false;
 var respawnTransform: Transform;
+//public var RespawnButton : Respawn;
+//var respawnImage = UnityEngine.UI.Image;
 
 function Start() {
 
     mono =  charMotor.GetComponent("FirstPersonController");
+
+//	var Respawn = GameObject.FindGameObjectWithTag("UI").GetComponentsInChildren(Respawn);
+	
+//    Debug.Log("Respawn object: " + Respawn);
 }
 
 function Update() {
@@ -43,12 +53,6 @@ function Update() {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-    if (HomebaseCheck.finished == true) {
-        mono.enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
 }
 
 function OnGUI() {
@@ -56,15 +60,11 @@ function OnGUI() {
         if (GUI.Button(Rect(Screen.width*0.5-50, 200-20, 100, 40), "Respawn")) { // 200 down from the top, 100 width, 40 tall 
             RespawnPlayer();
         }
+
         if (GUI.Button(Rect(Screen.width*0.5-50, 240, 100, 40), "Menu")) { // 200 down from the top, 100 width, 40 tall 
             Debug.Log("Return to Menu");
         }
     
-    }
-    if (HomebaseCheck.finished == true) {
-        if (GUI.Button(Rect(Screen.width*0.5-50, 200-20, 100, 40), "Restart Game")) {
-            RestartGame();
-        }
     }
    
 }
@@ -77,8 +77,8 @@ function RespawnPlayer(){
     gameObject.SendMessage("Reload");
     playerDead = false;
     mono.enabled = true;
+    Cursor.visible = false; // cursor locked again when player respawns
+    Screen.lockCursor = true;
 }
 
-function RestartGame() {
-    Application.LoadLevel("Level 1");
-}
+

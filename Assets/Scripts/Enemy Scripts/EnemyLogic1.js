@@ -1,6 +1,6 @@
 #pragma strict
 var MaxHealth : int = 100;
-var Health : int;
+static var Health : int;
 var anim : Animator;
 
 function Start() {
@@ -8,16 +8,16 @@ function Start() {
     anim = GetComponent ("Animator");
 }
 
-function ApplyDamage(M4A1Damage : int) {
-    Health -= M4A1Damage;
+function ApplyDamage(Damage : int) {
+    Health -= Damage;
     anim.SetTrigger("Hit");
     if (Health <= 0) {
         Dead();
     }
 }
 
-function KnifeCut(KnifeDamage : int) {
-    Health -= KnifeDamage;
+function Punch(Damage : int) {
+    Health -= Damage;
     anim.SetTrigger("Hit");
     if (Health <= 0) {
         Dead();
@@ -31,9 +31,18 @@ function KnifeCut(KnifeDamage : int) {
             belonging.transform.parent = null;
             belonging.GetComponent.<Rigidbody>().useGravity = true;
             belonging.GetComponent.<Rigidbody>().isKinematic = false;
+        } else {
+            GetComponent(EnemyShooting).enabled = false;
+            GetComponent(EnemySight).enabled = false;
+            GetComponent(EnemyAI).enabled = false;
+            yield WaitForSeconds(10);
+            GetComponent(EnemyShooting).enabled = true;
+            GetComponent(EnemySight).enabled = true;
+            GetComponent(EnemyAI).enabled = true;
+        
         }
     Destroy (gameObject);
-
+   
     
 }
 

@@ -1,6 +1,6 @@
 #pragma strict
 var MaxHealth : int = 100;
-var Health : int;
+static var Health : int;
 var anim : Animator;
 var animeShooting : MonoBehaviour;
 

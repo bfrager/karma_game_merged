@@ -55,12 +55,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -76,6 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Fantasy Skybox FREE\Scripts\FSPlayer.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\SetAudioLevels.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
     <Compile Include="Assets\Scripts\HealthBar2.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
   </ItemGroup>
