@@ -53,7 +53,7 @@ function OnGUI() {
         } else if (bossOnly == true) {
             GUI.Box(Rect(Screen.width*0.25-51,200,300,22), "Find all treasures!");
         } else if (finished == true) {
-            GUI.Box(Rect(Screen.width*0.25-51,200,300,22), "Congrats!");
+            GUI.Box(Rect(Screen.width*0.25+65,200,300,22), "Congrats!");
         }
     }    
 }

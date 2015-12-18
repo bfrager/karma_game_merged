@@ -38,7 +38,7 @@ function Update ()
     // If the Fire1 button is being press and it's time to fire...
     if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets )
     {
-		if (fpsSystem.Bullets >= 0){
+		if (fpsSystem.Bullets > 0){
 			Shoot ();
 		}
         // ... shoot the gun.

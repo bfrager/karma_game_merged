@@ -1,9 +1,9 @@
 static var currentWeapon = 1;
 var maxWeapons = 4;
 var theAnimator : Animator;
-var M4A1 : GameObject;
-var AK47 : GameObject;
-var Grenade : GameObject;
+var RainbowCrossbow : GameObject;
+var PetalShotgun : GameObject;
+var TeddyGrenade : GameObject;
 
 function Awake() {
     SelectWeapon(currentWeapon);

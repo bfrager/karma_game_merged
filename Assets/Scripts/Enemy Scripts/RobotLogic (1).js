@@ -14,10 +14,12 @@ function Hug() {
     GetComponent(EnemyShooting).enabled = false;
     GetComponent(EnemySight).enabled = false;
     GetComponent(EnemyAI).enabled = false;
+    this.gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color = Color.black;
     yield WaitForSeconds(5);
     GetComponent(EnemyShooting).enabled = true;
     GetComponent(EnemySight).enabled = true;
     GetComponent(EnemyAI).enabled = true;
+    this.gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color = Color.white;
 }
 
 function Punch(punch_Damage : int) {
@@ -38,10 +40,12 @@ function Punch(punch_Damage : int) {
             GetComponent(EnemyShooting).enabled = false;
             GetComponent(EnemySight).enabled = false;
             GetComponent(EnemyAI).enabled = false;
+            this.gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color = Color.black;
             yield WaitForSeconds(10);
             GetComponent(EnemyShooting).enabled = true;
             GetComponent(EnemySight).enabled = true;
             GetComponent(EnemyAI).enabled = true;
+            this.gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color = Color.white;
             Health = MaxHealth;
 
         }

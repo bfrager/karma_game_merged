@@ -57,12 +57,12 @@ function OnGUI() {
             RespawnPlayer();
         }
         if (GUI.Button(Rect(Screen.width*0.5-50, 240, 100, 40), "Menu")) { // 200 down from the top, 100 width, 40 tall 
-            Debug.Log("Return to Menu");
+            Application.LoadLevel("Level 0");
         }
     
     }
     if (HomebaseCheck.finished == true) {
-        if (GUI.Button(Rect(Screen.width*0.5-50, 200-20, 100, 40), "Restart Game")) {
+        if (GUI.Button(Rect(Screen.width*0.5-50, 250, 100, 40), "Restart Game")) {
             RestartGame();
         }
     }
@@ -83,5 +83,6 @@ function RespawnPlayer(){
 }
 
 function RestartGame() {
+
     Application.LoadLevel("Level 1");
 }

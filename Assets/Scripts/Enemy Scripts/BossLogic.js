@@ -32,8 +32,10 @@ function ApplyDamage(gunDamage : int) {
 
     function Hug() {
         GetComponent(EnemyAdvancedAI).enabled = false;
+        gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color = Color.cyan;
         yield WaitForSeconds(5);
         GetComponent(EnemyAdvancedAI).enabled = true;
+        gameObject.transform.GetChild(1).GetComponent.<Renderer>().material.color =Color.white;
     }
 
         function Dead() {

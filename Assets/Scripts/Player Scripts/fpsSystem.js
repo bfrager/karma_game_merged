@@ -37,12 +37,10 @@ function Update() {
     timeBetweenPunch++;
     if (RespawnMenu.playerDead == false) {
         if (Input.GetButtonDown("Fire1")) {
-            if (Bullets > 0){
-                Bullets -= 1;
-            }
             var hit : RaycastHit;
             if (WeaponSwitching02.currentWeapon == 1 || WeaponSwitching02.currentWeapon == 2 ) {
-                if (Bullets >= 0) {
+                if (Bullets >= 1) {
+                    Bullets -= 1;
                     if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), hit)) {
                         if (hit.distance < gunRange) { //replace with dynamic weapon variable
                             hit.transform.SendMessage("ApplyDamage", gunDamage, SendMessageOptions.DontRequireReceiver);
@@ -81,4 +79,8 @@ function Update() {
 
  function Reload(){
      Bullets = MaxBullets;
+ }
+
+ function OnGUI(){
+     GUI.Box(Rect(Screen.width*1-100, 25, 80, 25), "Bullets: " + Bullets.ToString());
  }
