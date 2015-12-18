@@ -1,8 +1,8 @@
-﻿var damagePerShot : int = 20;                  // The damage inflicted by each bullet.
+var damagePerShot : int = 20;                  // The damage inflicted by each bullet.
 var timeBetweenBullets : float = 0.15f;        // The time between each shot.
 var range : float = 100f;                      // The distance the gun can fire.
-var MaxBullets : int = 10;
-var Bullets : int;
+//var MaxBullets : int = 10;
+//var Bullets : int;
 
 private var timer : float;                                    // A timer to determine when to fire.
 private var shootRay : Ray;                                   // A ray from the gun end forwards.
@@ -13,7 +13,6 @@ private var gunLine : LineRenderer;                           // Reference to th
 private var gunAudio : AudioSource;                           // Reference to the audio source.
 private var gunLight : Light;                                 // Reference to the light component.
 private var effectsDisplayTime : float = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
-var enemyHealth;
 
 function Awake ()
 {
@@ -21,7 +20,7 @@ function Awake ()
     shootableMask = LayerMask.GetMask ("Shootable");
 	
 	// load the gun
-	Bullets = MaxBullets;
+	//Bullets = MaxBullets;
 	
      // Set up the references.
     gunParticles = GetComponent (ParticleSystem);
@@ -39,8 +38,7 @@ function Update ()
     // If the Fire1 button is being press and it's time to fire...
     if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets )
     {
-		if (Bullets > 0){
-			Bullets -= 1;
+		if (fpsSystem.Bullets >= 0){
 			Shoot ();
 		}
         // ... shoot the gun.
@@ -93,18 +91,14 @@ public function Shoot ()
     if(Physics.Raycast (shootRay, shootHit, range, shootableMask))
     {
         // Try and find an EnemyHealth script on the gameobject hit.
-            var enemyHealth : EnemyLogic1 = shootHit.collider.GetComponent (EnemyLogic1);
-
-        
-         Debug.Log(enemyHealth);
+        // var enemyHealth : EnemyLogic1 = shootHit.collider.GetComponent (EnemyLogic1);
 
         // If the EnemyHealth component exist...
-        if(enemyHealth != null)
-        {   
+        // if(enemyHealth != null)
+        //{   
             // ... the enemy should take damage.
-            enemyHealth.ApplyDamage (damagePerShot);
-            Debug.Log(damagePerShot + " damage applied");
-        }
+           //  enemyHealth.ApplyDamage (damagePerShot);
+        //}
 
         // Set the second position of the line renderer to the point the raycast hit.
         gunLine.SetPosition (1, shootHit.point);

@@ -1,8 +1,14 @@
-﻿#pragma strict
+#pragma strict
 
 var Weapon0 : Transform;
 var Punch_Damage : int = 30;
 var Punch_Range : int = 5;
+var MaxBullets : int = 30;
+static var Bullets : int;
+var gunDamage = 50;
+var gunRange : int = 100;
+var hugRange : int = 10;
+var timeBetweenPunch : int;
 
 // var Weapon1 : Transform;
 // var Weapon1_Damage : int = 35;
@@ -23,44 +29,56 @@ function Start() {
     // Bullets = MaxBullets;
     Cursor.visible = false;
     Screen.lockCursor = true;
+    Bullets = MaxBullets;
+    timeBetweenPunch = 0;
 }
 
 function Update() {
+    timeBetweenPunch++;
     if (RespawnMenu.playerDead == false) {
         if (Input.GetButtonDown("Fire1")) {
-            var weapon_num = WeaponSwitching02.currentWeapon;
-            var Weapon = "Weapon" + weapon_num;
-            Debug.Log("Current weapon = " + Weapon);
-            // Weapon.GetComponent(Animation).Play("Attack", PlayMode.StopAll);
+            if (Bullets > 0){
+                Bullets -= 1;
+            }
             var hit : RaycastHit;
-            if (weapon_num > 0) {
-                // if (Bullets > 0){
-                //     Bullets -= 1;
-                //     if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), hit)) {
-                //         if (hit.distance < Weapon1_Range) { //replace with dynamic weapon variable
-                //             hit.transform.SendMessage("ApplyDamage", Weapon1_Damage, SendMessageOptions.DontRequireReceiver);
-                //         }
-                //     }
-                // }
-                // else {
-                //     Debug.Log("No more shots. Get more ammo!");
-                // } 
-
-            } else {
-                var anim = Weapon0.GetComponent(Animation);
-                anim.Play("punch");
+            if (WeaponSwitching02.currentWeapon == 1 || WeaponSwitching02.currentWeapon == 2 ) {
+                if (Bullets >= 0) {
+                    if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), hit)) {
+                        if (hit.distance < gunRange) { //replace with dynamic weapon variable
+                            hit.transform.SendMessage("ApplyDamage", gunDamage, SendMessageOptions.DontRequireReceiver);
+                        }
+                    }
+                }
+            }
+            else if (WeaponSwitching02.currentWeapon == 3) {
+                if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), hit)) {
+                    if (hit.distance < hugRange) { //replace with dynamic weapon variable
+                        hit.transform.SendMessage("Hug", SendMessageOptions.DontRequireReceiver);
+                    }
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.R)) {
+            if (WeaponSwitching02.currentWeapon == 0) {
+                // var anim = Weapon0.GetComponent(Animation);
+                // anim.Play("punch");
                 if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), hit)) {
                     if (hit.distance < Punch_Range) {
-                        hit.transform.SendMessage("Punch", Punch_Damage, SendMessageOptions.DontRequireReceiver);
-                        Debug.Log("Punch");       
+                        if (timeBetweenPunch % 10 == 0) {
+                            hit.transform.SendMessage("Punch", Punch_Damage, SendMessageOptions.DontRequireReceiver);
+                            Debug.Log("Punch");       }
+                       
                     }    
                 }
             }
         }
+           
+    
+        
     }
-   
 }
+   
 
-// function Reload(){
-//     Bullets = MaxBullets;
-// }
+ function Reload(){
+     Bullets = MaxBullets;
+ }

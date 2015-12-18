@@ -4,7 +4,6 @@ private var bossOnly = false;
 private var neither = true;
 private var drawGUI = false;
 
-
 function Start() {
     finished = false;
 }
@@ -34,11 +33,13 @@ function OnTriggerEnter (other : Collider) {
     }
 }
 
-function OnTriggerExit (other : Collider) {
-   if (other.gameObject.tag == "Player") { 
-       drawGUI = false;
-       GetComponent.<AudioSource>().Stop();
-       GetComponent.<AudioSource>().loop = false;
+    function OnTriggerExit (other : Collider) {
+        Debug.Log("I left homebase");
+        Debug.Log(drawGUI);
+    if (other.gameObject.tag == "Player") { 
+        
+        drawGUI = false;
+        Debug.Log(drawGUI);
    }
 }
 
@@ -52,7 +53,6 @@ function OnGUI() {
         } else if (bossOnly == true) {
             GUI.Box(Rect(Screen.width*0.25-51,200,300,22), "Find all treasures!");
         } else if (finished == true) {
-           
             GUI.Box(Rect(Screen.width*0.25-51,200,300,22), "Congrats!");
         }
     }    

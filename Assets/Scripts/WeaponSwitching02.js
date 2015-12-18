@@ -1,5 +1,3 @@
-﻿
-
 static var currentWeapon = 1;
 var maxWeapons = 4;
 var theAnimator : Animator;

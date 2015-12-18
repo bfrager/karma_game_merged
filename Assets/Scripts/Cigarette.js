@@ -16,6 +16,7 @@ function Update () {
 
 function pickup() {
     if (this.tag == "Pickables" && this.name == "philippes_cigs") {
+
         gotCigarette = true;
         distance = Vector3.Distance(this.transform.position, player.transform.position);
         if (distance < 10) {
