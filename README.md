@@ -50,15 +50,15 @@ We would love to continue development working through our <a href="https://trell
 We would probably want to generalize the game mechanics and objects so that people outside of GA can be in on the hilarity. Or not.
 
 #Screenshots:
-(cuz wireframes are for suckas)
+<p>(cuz wireframes are for suckas)</p>
 <h2>GA Exterior:</h2>
-<img src="http://imgur.com/APzu35n">
+<img src="http://i.imgur.com/APzu35n.jpg">
 
 <h2>GA Interior:</h2>
-<img src="http://imgur.com/gUrDhDj">
+<img src="http://i.imgur.com/gUrDhDj.jpg">
 
 <h2>Ready Player One:</h2>
-<img src="http://imgur.com/2Of5kXt">
+<img src="http://i.imgur.com/2Of5kXt.jpg">
 
 <h2>The Instructor's Treasures:</h2>
 <ol>
@@ -67,7 +67,7 @@ We would probably want to generalize the game mechanics and objects so that peop
 	<li>Philippe's Cigs</li>
 	<li>MEAN Machine Textbook</li>
 </ol>
-<img src="http://imgur.com/i17oDLi">
+<img src="http://i.imgur.com/i17oDLi.jpg">
 
 <h2>Love Weapon Pack:</h2>
 <ol>
@@ -75,4 +75,4 @@ We would probably want to generalize the game mechanics and objects so that peop
 	<li>Flower Petal Gun</li>
 	<li>Teddy Bear Love Bomb</li>
 </ol>
-<img src="http://imgur.com/VaC1G6X">
+<img src="http://i.imgur.com/VaC1G6X.jpg">
